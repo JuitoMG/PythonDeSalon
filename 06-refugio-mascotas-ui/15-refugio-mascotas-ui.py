@@ -20,7 +20,7 @@ class RegistroMascotasGUI:
 
     def crear_tabla(self):
         self.cursor.execute('''
-            CREATE TABLE IF NOT EXIST mascotas (
+            CREATE TABLE IF NOT EXISTS mascotas (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nombre TEXT NOT NULL,
                 tipo TEXT NOT NULL,
@@ -40,7 +40,7 @@ class RegistroMascotasGUI:
         self.entry_tipo = tk.Entry(self.root)
         self.entry_tipo.grid(row=1,column=1,padx=10,pady=5)
 
-        tk.Label(self.root,test="Edad:").grid(row=2,column=0,padx=10,pady=5)
+        tk.Label(self.root,text="Edad:").grid(row=2,column=0,padx=10,pady=5)
         self.entry_edad = tk.Entry(self.root)
         self.entry_edad.grid(row=2,column=1,padx=10,pady=5)
 
@@ -70,6 +70,33 @@ class RegistroMascotasGUI:
             VALUES (?,?,?,?)
         ''',(nombre,tipo,edad,estado))
         self.conn.commit()
-        
+        messagebox.showinfo("\nÉxito", f"Mascota {nombre} registrada con éxito.")
+        self.limpiar_campos()
+
+    def listar_mascotas(self):
+        self.cursor.execute('SELECT * FROM mascotas ORDER BY nombre ASC')
+        mascotas = self.cursor.fetchall()
+        if mascotas:
+            lista = "\n".join([f"ID: {m[0]}, Nombre: {m[1]}, Tipo: {m[2]}, Edad: {m[3]}, Estado: {m[4]}" for m in mascotas])
+            messagebox.showinfo("\nMascotas registradas\n",lista)
+        else:
+            messagebox.showinfo("\nMascotas Registradas\n", "No hay mascotas registradas.")
+
+    def limpiar_campos(self):
+        self.entry_nombre.delete(0, tk.END)
+        self.entry_tipo.delete(0, tk.END)
+        self.entry_edad.delete(0, tk.END)
+        self.entry_estado.delete(0, tk.END)
+
+    def cerrar(self):
+        self.conn.close()
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = RegistroMascotasGUI(root)
+    root.protocol("WM_DELETE_WINDOW", app.cerrar)
+    root.mainloop()        
+
+
                         
         
