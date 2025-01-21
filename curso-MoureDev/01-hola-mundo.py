@@ -50,4 +50,5 @@ tipo = type(suma)     #Calcula el tipo de dato de la función "suma" y lo guarda
 print("Resultado:",suma,". Tipo:",tipo)   #Imprime una cadena de texto concatenando las variables
 
 # 10. Comenta el código del Ejercicio 9, y explica qué hace cada línea usando comentarios de una sola línea.
+
 #Hecho
