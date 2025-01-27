@@ -41,3 +41,5 @@ diccio_nuevo = {}
 diccio_nuevo = diccio_nuevo.fromkeys(mi_lista,"Desconocido")
 print(diccio_nuevo)
 
+
+
