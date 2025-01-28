@@ -42,8 +42,19 @@ else:
 
 # 5. Escribe un programa que verifique si un número es divisible por 3 y por 5 al mismo tiempo.
 
+numero = 15
+
+if (numero%3) == 0 and (numero%5) == 0:
+    print("Número divisible por tres y cinco a la vez")
 
 # 6. Solicita al usuario que ingrese un número y verifica si es par o impar.
+
+numero = input("Ingresa un número para saber si es par o impar")
+
+if numero%2 == 0:
+    print("Es par")
+else:
+    print("Es impar")
 
 
 # 7. Escribe un programa que determine si una persona puedevotar en función de su edad(mayor o igual a 18). Si tiene 16 o 17 años, indica 
