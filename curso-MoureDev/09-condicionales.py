@@ -10,7 +10,6 @@ else:
     else: print("Positivo")
 
    
-
 # 2. Solicita al usuario que ingrese su edad y muestra un mensaje indicando si es mayor de edad(18 años o más) o menor de edad.
 
 edad = int(input("Ingresa tu edad\n"))
@@ -103,4 +102,4 @@ elif color == "amarillo":
 elif color == "rojo":
     print("Pare") 
 else:
-    print("Error: Color incorrecto")           
+    print("Error: Color incorrecto")          
