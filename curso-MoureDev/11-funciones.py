@@ -44,7 +44,7 @@ print(arbitrary_sum(1,3,2,5))
 # 6. Escribe una función llamada "generate_full_greeting" que reciba dos argumentos: nombre y apellido, y retorne el
 # saludo completo "Hola, <nombre> <apellido>". Los argumentos deben ser pasados por clave.
 
-def generate_full_greeting (nombre, apellido):
+def generate_full_greeting (nombre = "Fulano", apellido = "Mengano"):
     print(f"Hola, {nombre} {apellido}")
 
 generate_full_greeting("Fulanez", "Menganez")
