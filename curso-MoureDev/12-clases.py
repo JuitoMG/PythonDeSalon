@@ -34,15 +34,70 @@ animal.make_sound()
 # 3. Crea una clase llamada "Car" con las propiedades públicas"brand" y "model". Además, debe tener una propiedad
 # privada "_speed" que inicialmente será 0.
 
-
+class Car:
+    def __init__(self, brand, model, speed = 0):
+        self.brand = brand
+        self.model = model
+        self.__speed = speed
 
 
 # 4. Añade a la clase "Car" un método llamado "accelerate" que aumente la velocidad en 10 unidades. Añade también un
 # método "brake" que reduzca la velocidad en 10 unidades. Asegúrate de que la velocidad no sea negativa.
 
+class Car:
+    def __init__(self, brand, model, speed = 0):
+        self.brand = brand
+        self.model = model
+        self.__speed = speed
+
+    def accelerate (self):
+        self.__speed = self.__speed + 10
+        print("+10 de velocidad")
+
+    def brake (self):
+        
+        if self.__speed <= 9:
+            print("No se puede reducir velocidad")
+        else:
+            self.__speed = self.__speed - 10
+            print("-10 de velocidad")    
+
+    def speed (self):
+        print("Velocidad: ",self.__speed)
+
+coche = Car("Opel","Corsa",10)
+coche.speed()
+coche.accelerate()    
+coche.speed()
+coche.brake()
+coche.speed()
+coche.brake()  
+coche.brake()            
 
 # 5. Crea una clase "Book" que tenga propiedades como "title" (público) y "author" (privado). Añade un método para
 # obtener el autor y otro para cambiar el título del libro.
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.__author = author
+
+    def obtener_autor (self):
+        print(self.__author)    
+
+    def cambiar_titulo(self,newTitle):
+        self.title = newTitle
+        print("Título cambiado")
+
+    def mostrar_info(self):
+        print(self.title)
+        print(self.__author)       
+
+libro = Book("Piar","Fulano")
+libro.obtener_autor()
+libro.mostrar_info()
+libro.cambiar_titulo("Falafel")
+libro.mostrar_info()
 
 
 # 6. Crea una clase "Estudiante" que tenga como propiedades su nombre, apellido y una lista de notas. Añade un método
