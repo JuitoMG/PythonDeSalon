@@ -103,6 +103,19 @@ libro.mostrar_info()
 # 6. Crea una clase "Estudiante" que tenga como propiedades su nombre, apellido y una lista de notas. Añade un método
 # para calcular y devolver la nota media del estudiante.
 
+class Estudiante:
+    def __init__(self, nombre, apellido, notas):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.notas = notas
+
+    def media(self):
+        return sum(self.notas)/len(self.notas)   
+
+estudiante = Estudiante("Fulanez","Menganez",[3,6,8,4])
+print("Nota media de ",estudiante.nombre,":",estudiante.media())
+
+
 
 # 7. Crea una clase "BankAccount" con propiedades como "owner" y "balance". Añade métodos para depositar y retirar
 # dinero, asegurándote de que no se pueda retirar más de lo que hay en la cuenta.
