@@ -49,8 +49,8 @@ def operaciones (num1,num2):
     print("Menú\n")
     print("1. Suma")
     print("2. Resta")
-    print("3.Multiplicación")
-    print("4.División\n")
+    print("3. Multiplicación")
+    print("4. División\n")
 
     
     try:
@@ -165,6 +165,38 @@ transaccion(110)
 # 9. Crea una función que intente convertir una lista de cadenas en enteros. Maneja cualquier error que surja
 # cuando una cadena no pueda convertirse.
 
+lista = ["1","2","3","4","Efe","7"]
+def cadena_a_entero (cadena:list):
+    for i in range(len(cadena)):
+        try:
+            cadena[i] = int(cadena[i])
+        except ValueError:    
+            print("Error: ValueError")
+    print(cadena)        
 
+cadena_a_entero(lista)
+
+    
 
 # 10. Crea una función que calcule la raíz cuadrada de un número. Lanza un ValueError si el número es negativo.
+import math
+
+def raiz (numero):
+    try:
+        numero = int(numero)
+        if numero <= 0:
+            raise ValueError("El número no puede ser negativo")
+        else:
+            resultado = math.sqrt(numero)
+            print(resultado)
+    except:
+        print("No se pudo realizar la operación")
+    else:
+        print("Operación realizada con éxito")
+    finally:
+        print("Continua el programa...")       
+
+raiz(4)
+raiz(9)
+raiz("9")
+raiz(-1)             
