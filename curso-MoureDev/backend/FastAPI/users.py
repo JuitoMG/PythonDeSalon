@@ -24,4 +24,4 @@ async def usersjson():
 
 @app.get("/users")
 async def users():
-    return user_list
+    return user_list 
