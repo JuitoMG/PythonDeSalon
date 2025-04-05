@@ -11,3 +11,4 @@ print(cuadrado(3))
 
 cuadrado_lambda = lambda x: x ** 2  #Se asigna la función de la derecha en la variable de la izquierda
 print(cuadrado_lambda(3))
+
