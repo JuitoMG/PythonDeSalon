@@ -6,6 +6,7 @@ nombre_archivo = 'mi_archivo.txt'
 
 archivo = open(nombre_archivo,'w')
 archivo.write('Hola, cómo estás')
+archivo.write('\nPor aquí...')
 archivo.close()
 
 print(f'Se creó el archivo: {nombre_archivo}')
@@ -14,3 +15,4 @@ print(f'Se creó el archivo: {nombre_archivo}')
 
 with open(nombre_archivo,'w') as archivo:
     archivo.write('Hola, cómo estás 2')
+    archivo.write('\nPor aquí vamos...')
