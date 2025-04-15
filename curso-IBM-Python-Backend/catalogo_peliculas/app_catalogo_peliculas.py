@@ -36,3 +36,9 @@ class AppCatalogoPeliculas:
                 print('Error. Introduce un número válido')
             except Exception as e:
                 print(f'Error: {e}')        
+
+if __name__ == '__main__':
+    app = AppCatalogoPeliculas()
+    app.mostrar_menu()
+
+    # Da error
