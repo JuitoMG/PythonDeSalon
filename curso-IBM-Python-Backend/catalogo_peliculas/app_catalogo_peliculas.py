@@ -1,4 +1,8 @@
 from catalogo_peliculas.servicio_peliculas import ServicioPeliculas
+from catalogo_peliculas.pelicula import Pelicula
+import os
+
+
 class AppCatalogoPeliculas:
 
     def __init__(self):
