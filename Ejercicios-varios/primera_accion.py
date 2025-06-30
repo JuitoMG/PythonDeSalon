@@ -1,0 +1,1 @@
+print("Primera acción")
